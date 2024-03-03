@@ -20,6 +20,11 @@ namespace Problems.Common
             return "[" + string.Join( ", ", list ) + "]";
         }
 
+        public static string PrintList<T>( this IList<T> list )
+        {
+            return "[" + string.Join( ", ", list ) + "]";
+        }
+
         public static void Print( this int[] list )
         {
             Console.WriteLine( "[" + string.Join( ", ", list ) + "]" );
@@ -31,6 +36,11 @@ namespace Problems.Common
         }
 
         public static void Print<T>( this List<List<T>> listOfLists )
+        {
+            Console.WriteLine( "[" + string.Join( ", ", listOfLists.Select( l => l.PrintList() ) ) + "]" );
+        }
+
+        public static void Print<T>( this List<IList<T>> listOfLists )
         {
             Console.WriteLine( "[" + string.Join( ", ", listOfLists.Select( l => l.PrintList() ) ) + "]" );
         }

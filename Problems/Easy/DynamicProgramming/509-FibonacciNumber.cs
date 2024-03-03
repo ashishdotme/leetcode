@@ -1,12 +1,10 @@
-using NUnit.Framework;
-
 using Problems.Common;
 
 namespace Problems.Easy.DynamicProgramming
 {
     public class FibonacciNumber
     {
-        public int Fib( int n )
+        public int Solution( int n )
         {
             if ( n == 0 )
             {
@@ -27,9 +25,9 @@ namespace Problems.Easy.DynamicProgramming
 
         // [1, 1, 2, 3, 5, 8]
         [TestCaseSource( nameof(FibonacciNumberTestCases) )]
-        public void FibonacciNumberTest( (int numRows, int expected) tc )
+        public void FibonacciNumberTest( (int data, int expected) tc )
         {
-            int res = Fib( tc.numRows );
+            int res = Solution( tc.data );
             Assert.That( res, Is.EqualTo( tc.expected ) );
         }
 

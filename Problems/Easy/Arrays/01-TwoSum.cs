@@ -1,10 +1,10 @@
-using NUnit.Framework;
+global using NUnit.Framework;
 
 namespace Problems.Easy.Arrays
 {
     public class TwoSum
     {
-        public int[] TwoSumSolution( int[] nums, int target )
+        public int[] Solution( int[] nums, int target )
         {
             Dictionary<int, int> dict = new();
             for ( int i = 0; i < nums.Length; i++ )
@@ -26,7 +26,7 @@ namespace Problems.Easy.Arrays
         [TestCase( new[] { 2, 7, 11, 15 }, 9, ExpectedResult = new[] { 0, 1 } )]
         public int[] TwoSumTest( int[] nums, int target )
         {
-            return TwoSumSolution( nums, target );
+            return Solution( nums, target );
         }
     }
 }

@@ -1,12 +1,10 @@
-using NUnit.Framework;
-
 using Problems.Common;
 
 namespace Problems.Easy.DynamicProgramming
 {
     public class PascalTriangle
     {
-        public IList<IList<int>> Generate( int numRows )
+        public IList<IList<int>> Solution( int numRows )
         {
             if ( numRows == 1 )
             {
@@ -31,9 +29,9 @@ namespace Problems.Easy.DynamicProgramming
         }
 
         [TestCaseSource( nameof(PascalTriangleTestCases) )]
-        public void PascalTriangleTest( (int numRows, IList<IList<int>> expected) tc )
+        public void PascalTriangleTest( (int data, IList<IList<int>> expected) tc )
         {
-            IList<IList<int>> res = Generate( tc.numRows );
+            IList<IList<int>> res = Solution( tc.data );
             Assert.That( res, Is.EqualTo( tc.expected ) );
         }
 
