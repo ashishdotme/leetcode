@@ -30,6 +30,11 @@ namespace Problems.Common
             Console.WriteLine( "[" + string.Join( ", ", list ) + "]" );
         }
 
+        public static void Print( this char[] list )
+        {
+            Console.WriteLine( "[" + string.Join( ", ", list ) + "]" );
+        }
+
         public static void Print<T>( this List<T> list )
         {
             Console.WriteLine( "[" + string.Join( ", ", list ) + "]" );
