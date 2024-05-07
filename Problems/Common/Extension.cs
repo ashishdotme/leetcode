@@ -29,27 +29,27 @@ namespace Problems.Common
 
         public static void Print( this int[] list )
         {
-            Console.WriteLine( "[" + string.Join( ", ", list ) + "]" );
+            TestContext.WriteLine( "[" + string.Join( ", ", list ) + "]" );
         }
 
         public static void Print( this char[] list )
         {
-            Console.WriteLine( "[" + string.Join( ", ", list ) + "]" );
+            TestContext.WriteLine( "[" + string.Join( ", ", list ) + "]" );
         }
 
         public static void Print<T>( this List<T> list )
         {
-            Console.WriteLine( "[" + string.Join( ", ", list ) + "]" );
+            TestContext.WriteLine( "[" + string.Join( ", ", list ) + "]" );
         }
 
         public static void Print<T>( this List<List<T>> listOfLists )
         {
-            Console.WriteLine( "[" + string.Join( ", ", listOfLists.Select( l => l.PrintList() ) ) + "]" );
+            TestContext.WriteLine( "[" + string.Join( ", ", listOfLists.Select( l => l.PrintList() ) ) + "]" );
         }
 
         public static void Print<T>( this List<IList<T>> listOfLists )
         {
-            Console.WriteLine( "[" + string.Join( ", ", listOfLists.Select( l => l.PrintList() ) ) + "]" );
+            TestContext.WriteLine( "[" + string.Join( ", ", listOfLists.Select( l => l.PrintList() ) ) + "]" );
         }
 
         public static string ToMatrixString<T>( this T[,] matrix, string delimiter = "\t" )
