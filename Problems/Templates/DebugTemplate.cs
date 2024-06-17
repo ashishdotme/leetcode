@@ -8,7 +8,7 @@ namespace Problems.Templates
 {
     internal class DebugTemplate
     {
-        public int Solution( int[] nums )
+        public int Answer( int[] nums )
         {
             return 1;
         }
@@ -16,7 +16,7 @@ namespace Problems.Templates
         [Test]
         public void ProblemTest()
         {
-            var result =  Solution( [2, 3] );
+            var result =  Answer( [2, 3] );
             TestContext.WriteLine( $"Output => {result}" );
         }
     }

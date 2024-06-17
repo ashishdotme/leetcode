@@ -47,6 +47,11 @@ namespace Problems.Common
             TestContext.WriteLine( "[" + string.Join( ", ", listOfLists.Select( l => l.PrintList() ) ) + "]" );
         }
 
+        public static void Print<T>( this IList<IList<T>> listOfLists )
+        {
+            TestContext.WriteLine( "[" + string.Join( ", ", listOfLists.Select( l => l.PrintList() ) ) + "]" );
+        }
+
         public static void Print<T>( this List<IList<T>> listOfLists )
         {
             TestContext.WriteLine( "[" + string.Join( ", ", listOfLists.Select( l => l.PrintList() ) ) + "]" );
@@ -68,5 +73,6 @@ namespace Problems.Common
 
             return s.ToString();
         }
+
     }
 }
