@@ -47,8 +47,9 @@ def insert_records(body, filepath, table, all_times, db):
       previous_html = None
   record = {
       "path": path_slug,
-      "topic": path.split("\\")[0],
-      "subtopic": path.split("\\")[1],
+      "topic1": path.split("/")[0],
+      "topic2": path.split("/")[1],
+      "topic3": path.split("/")[2],
       "title": filepath.name,
       "url": url,
       "slug": slug,
