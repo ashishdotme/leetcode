@@ -3,7 +3,7 @@ name: Build code.ashish.me
 on:
   push:
     branches:
-      - master
+      - main
     paths-ignore:
       - README.md
 
