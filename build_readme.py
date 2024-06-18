@@ -21,7 +21,8 @@ if __name__ == "__main__":
         index.append("### {}\n".format(topic))
         for row in rows:
             index.append(
-                "* {title}- {date}".format(
+                "* [{formattedTitle}]({url}) - {date}".format(
+                    formattedTitle=re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', row["title"].replace("-", " ")).title(),
                     date=row["created"].split("T")[0], **row
                 )
             )
@@ -34,7 +35,8 @@ if __name__ == "__main__":
         index.append("### {}\n".format(topic))
         for row in rows:
             index.append(
-                "* {title}- {date}".format(
+                "* [{formattedTitle}]({url}) - {date}".format(
+                    formattedTitle=re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', row["title"].replace("-", " ")).title(),
                     date=row["created"].split("T")[0], **row
                 )
             )
@@ -47,7 +49,8 @@ if __name__ == "__main__":
         index.append("### {}\n".format(topic))
         for row in rows:
             index.append(
-                "* {title}- {date}".format(
+                "* [{formattedTitle}]({url}) - {date}".format(
+                    formattedTitle=re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', row["title"].replace("-", " ")).title(),
                     date=row["created"].split("T")[0], **row
                 )
             )
