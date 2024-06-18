@@ -47,7 +47,8 @@ def insert_records(body, filepath, table, all_times, db):
       previous_html = None
   record = {
       "path": path_slug,
-      "topic": path.split("/")[0],
+      "topic": path.split("\\")[0],
+      "subtopic": path.split("\\")[1],
       "title": filepath.name,
       "url": url,
       "slug": slug,
@@ -89,13 +90,8 @@ def build_database(repo_path):
     table = db.table("problems", pk="path")
     for filepath in root.glob("*/**/*.cs"):
         fp = filepath.open()
-        if not ("node_modules" or "docs") in fp.name:
-            body = "```java  \n" + fp.read().strip() + "\n```"
-            insert_records(body, filepath, table, all_times, db)
-    for filepath in root.glob("*/**/*.js"):
-        fp = filepath.open()
-        if not ("node_modules" or "docs") in fp.name:
-            body = "```js  \n" + fp.read().strip() + "\n```"
+        if not any(extension in fp.name for extension in ('Common', 'obj', 'Debug', 'net8.0')):
+            body = "```c#  \n" + fp.read().strip() + "\n```"
             insert_records(body, filepath, table, all_times, db)
     table.enable_fts(
         ["title", "body"], tokenize="porter", create_triggers=True, replace=True
